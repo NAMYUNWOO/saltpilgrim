@@ -108,3 +108,4 @@ h2 { font-size: 16px; font-weight: normal; color: var(--accent); margin: 32px 0 
 
 .seller { margin-top: 12px; color: var(--dim); overflow-wrap: anywhere; }
 .seller[lang="ko"] { font-family: "NeoDunggeunmo", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }
+video.hero-art { display: block; width: 100%; height: auto; background: var(--panel); }
