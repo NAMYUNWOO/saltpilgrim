@@ -80,7 +80,7 @@ footer a { color: var(--muted); }
 .tagline { color: var(--accent); margin: 0 0 16px; }
 .pitch { margin: 0; }
 .hero-art { margin: 24px auto 0; border: 2px solid var(--line); }
-.hero-art.tall { max-width: 360px; }
+.hero-art.tall { max-width: min(360px, 100%); }
 .title-row { display: flex; gap: 16px; align-items: center; }
 .title-row img { width: 72px; height: 72px; flex: none; }
 
