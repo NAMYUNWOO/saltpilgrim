@@ -1,0 +1,9 @@
+4) latin_vga.ttf - "SaltPilgrim VGA 8x16"
+   PxPlus IBM VGA 8x16 - (c) 2016-2020 VileR, https://int10h.org/oldschool-pc-fonts/
+   from The Ultimate Oldschool PC Font Pack v2.2, licensed under Creative Commons
+   Attribution-ShareAlike 4.0 International (CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/).
+   No warranties are given. This file is a modified version: the glyphs U+2500-U+25FF (box drawing,
+   block elements, geometric shapes) were removed and the family renamed (game/tools/fonts/build_fonts.py).
+   This modified font is also licensed under CC BY-SA 4.0. The license text follows the OFL text at the end of this file.
+
+Full license: https://creativecommons.org/licenses/by-sa/4.0/

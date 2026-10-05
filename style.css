@@ -1,0 +1,107 @@
+/* SALT PILGRIM links — 1-bit look: the game palette, one VGA font, no gradients. */
+@font-face {
+  font-family: "VGA";
+  src: url("fonts/vga.ttf") format("truetype");
+  font-display: swap;
+}
+:root {
+  --bg: #0A1315;      /* k  — background */
+  --panel: #0F191B;   /* rock body */
+  --line: #253235;
+  --ink: #C3CCC7;     /* y  — salt grey */
+  --muted: #7D9096;
+  --dim: #5E737A;     /* K  — ash stone */
+  --accent: #FF9B40;  /* O  — lamp */
+  --rust: #C2622A;    /* o  — rust */
+  --water: #68DBF2;   /* C  — water */
+  --gutter: 16px;
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "VGA", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 16px;
+  line-height: 24px;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
+}
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+img { display: block; max-width: 100%; height: auto; }
+
+.wrap { max-width: 480px; margin: 0 auto; padding: 32px var(--gutter) 48px; }
+.wrap.wide { max-width: 760px; }
+
+/* ── link tree ─────────────────────────────────── */
+.profile { text-align: center; margin-bottom: 32px; }
+.avatar { width: 96px; height: 96px; margin: 0 auto 16px; border: 2px solid var(--line); image-rendering: pixelated; }
+.profile h1 { font-size: 32px; line-height: 40px; margin: 0; font-weight: normal; letter-spacing: 1px; }
+.profile p { margin: 8px 0 0; color: var(--muted); }
+
+.game {
+  display: block;
+  text-decoration: none;
+  border: 2px solid var(--line);
+  background: var(--panel);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.game:hover { border-color: var(--dim); }
+.game-head { display: flex; gap: 16px; align-items: center; }
+.game-head img { width: 64px; height: 64px; flex: none; border: 2px solid var(--line); object-fit: cover; }
+.game-title { display: block; color: var(--ink); }
+.game-kind { display: block; color: var(--muted); }
+.game-go { display: block; margin-top: 4px; color: var(--accent); }
+.soon-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.soon {
+  border: 1px dashed var(--dim);
+  color: var(--muted);
+  padding: 0 8px;
+  white-space: nowrap;
+}
+
+.social { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 24px; margin: 32px 0 0; padding: 0; list-style: none; }
+.social a { color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--line); }
+.social a:hover { color: var(--ink); }
+
+footer { margin-top: 40px; color: var(--dim); text-align: center; font-size: 16px; }
+footer p { margin: 4px 0; }
+footer a { color: var(--muted); }
+
+/* ── landing pages ─────────────────────────────── */
+.back { color: var(--muted); text-decoration: none; }
+.back:hover { color: var(--ink); }
+.hero { margin: 24px 0 32px; }
+.hero h1 { font-size: 32px; line-height: 40px; margin: 0 0 8px; font-weight: normal; }
+.tagline { color: var(--accent); margin: 0 0 16px; }
+.pitch { margin: 0; }
+.hero-art { margin: 24px auto 0; border: 2px solid var(--line); }
+.hero-art.tall { max-width: 360px; }
+.title-row { display: flex; gap: 16px; align-items: center; }
+.title-row img { width: 72px; height: 72px; flex: none; }
+
+.stores { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; margin: 0 0 32px; }
+.store {
+  border: 2px dashed var(--dim);
+  padding: 8px 12px;
+  color: var(--muted);
+}
+.store b { display: block; color: var(--ink); font-weight: normal; }
+
+h2 { font-size: 16px; font-weight: normal; color: var(--accent); margin: 32px 0 12px; letter-spacing: 1px; }
+.features { list-style: none; margin: 0; padding: 0; }
+.features li { padding-left: 24px; position: relative; margin-bottom: 12px; }
+.features li::before { content: ">"; position: absolute; left: 0; color: var(--rust); }
+.facts { color: var(--muted); }
+
+.shots { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.shots.land { grid-template-columns: 1fr; }
+@media (min-width: 640px) { .shots { grid-template-columns: repeat(4, minmax(0, 1fr)); } .shots.land { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.shots figure { margin: 0; }
+.shots img { border: 2px solid var(--line); width: 100%; }
+.shots figcaption { color: var(--muted); margin-top: 4px; }
+.contact a { color: var(--water); }
