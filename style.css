@@ -105,3 +105,6 @@ h2 { font-size: 16px; font-weight: normal; color: var(--accent); margin: 32px 0 
 .shots img { border: 2px solid var(--line); width: 100%; }
 .shots figcaption { color: var(--muted); margin-top: 4px; }
 .contact a { color: var(--water); }
+
+.seller { margin-top: 12px; color: var(--dim); overflow-wrap: anywhere; }
+.seller[lang="ko"] { font-family: "NeoDunggeunmo", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }
