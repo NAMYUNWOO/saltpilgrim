@@ -109,3 +109,10 @@ h2 { font-size: 16px; font-weight: normal; color: var(--accent); margin: 32px 0 
 .seller { margin-top: 12px; color: var(--dim); overflow-wrap: anywhere; }
 .seller[lang="ko"] { font-family: "NeoDunggeunmo", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }
 video.hero-art { display: block; width: 100%; height: auto; background: var(--panel); }
+
+/* 옛 CRT 4:3 화면(80×30 칸 × 2 = 1280×960 — paid-app 2026-10-06): 글이 작아 보이지 않게 본문 폭보다 넓게(최대 960), 한 줄에 한 장, 픽셀 그대로 */
+video.hero-art.bleed, .bleed { width: min(960px, calc(100vw - 32px)); max-width: none; position: relative; left: 50%; transform: translateX(-50%); }
+.crt { aspect-ratio: 4 / 3; image-rendering: pixelated; }
+.shots.crt { display: block; aspect-ratio: auto; image-rendering: auto; }
+.shots.crt figure { width: min(960px, calc(100vw - 32px)); position: relative; left: 50%; transform: translateX(-50%); margin: 0 0 24px; }
+.shots.crt img { aspect-ratio: 4 / 3; image-rendering: pixelated; width: 100%; height: auto; }
