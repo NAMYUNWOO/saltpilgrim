@@ -128,3 +128,38 @@ video.hero-art.bleed, .bleed { width: min(960px, calc(100vw - 32px)); max-width:
 .shots.crt { display: block; aspect-ratio: auto; image-rendering: auto; }
 .shots.crt figure { width: min(960px, calc(100vw - 32px)); position: relative; left: 50%; transform: translateX(-50%); margin: 0 0 24px; }
 .shots.crt img { aspect-ratio: 4 / 3; image-rendering: pixelated; width: 100%; height: auto; }
+
+/* App Store 칸 — 스토어 페이지처럼 미리보기 영상 먼저, 스크린샷을 옆으로 넘겨 본다. iPhone · iPad 탭 */
+.as-tabs { display: flex; gap: 8px; margin: 0 0 12px; }
+.as-tabs button { font: inherit; color: var(--muted); background: none; border: 2px solid var(--line); padding: 0 12px; cursor: pointer; }
+.as-tabs button[aria-selected="true"] { color: var(--bg); background: var(--ink); border-color: var(--ink); }
+.as-shelf {
+  display: flex; gap: 12px; overflow-x: auto; overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory; scroll-padding: 0 var(--gutter);
+  margin: 0 calc(-1 * var(--gutter)); padding: 0 var(--gutter) 12px;
+}
+.as-shelf[hidden] { display: none; }
+.as-item { flex: none; scroll-snap-align: start; height: auto; max-width: none; border: 1px solid var(--line); background: var(--panel); }
+.as-shelf.iphone .as-item { width: clamp(160px, 44vw, 230px); border-radius: 18px; }
+.as-shelf.iphone video.as-item { aspect-ratio: 886 / 1920; }
+.as-shelf.ipad .as-item { width: clamp(220px, 62vw, 320px); border-radius: 12px; }
+.as-shelf.ipad video.as-item { aspect-ratio: 1200 / 1600; }
+
+/* 모바일 스토어 단추 — 기기에 맞는 스토어(iOS · Android), 스크롤해도 화면 아래에 남는다 */
+.sticky-store {
+  position: fixed; z-index: 10; left: var(--gutter); right: var(--gutter);
+  bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  max-width: 728px; margin: 0 auto;
+  display: flex; align-items: center; gap: 12px; padding: 8px 12px;
+  background: var(--panel); border: 2px solid var(--accent); box-shadow: 0 0 0 4px var(--bg);
+  color: var(--ink); text-decoration: none;
+}
+.sticky-store[hidden] { display: none; }
+.sticky-store img { width: 40px; height: 40px; flex: none; border: 1px solid var(--line); }
+.sticky-text { flex: 1; min-width: 0; }
+.sticky-text b { display: block; font-weight: normal; }
+.sticky-sub { display: block; color: var(--muted); }
+.sticky-go { flex: none; background: var(--accent); color: var(--bg); padding: 0 12px; }
+.sticky-store.soon { border-color: var(--dim); border-style: dashed; }
+.sticky-store.soon .sticky-go { background: none; color: var(--muted); border: 1px dashed var(--dim); }
+body.has-sticky main { padding-bottom: 112px; }
