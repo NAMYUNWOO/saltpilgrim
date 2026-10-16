@@ -72,5 +72,30 @@
     <p class="seller">ArcMagic · Representative: Yunwoo Nam · Business Reg. No. 159-01-02743 · Mail-order Business Reg. No. 2026-Seongnam Jungwon-0600 · namyunwoo@icloud.com</p>
   </footer>
 </main>
+<a class="sticky-store" id="sticky-store" href="https://apps.apple.com/app/id6819164973" hidden>
+  <img src="../img/wr/icon.png" alt="" width="40" height="40">
+  <span class="sticky-text"><b>The Water Returned</b><span class="sticky-sub">App Store · out now</span></span>
+  <span class="sticky-go">GET</span>
+</a>
+<script>
+(function () {
+  // 모바일 기기에 맞는 스토어를 화면 아래에 늘 띄운다(iOS = App Store, Android = Google Play — 아직 출시 전이라 "coming soon")
+  var ua = navigator.userAgent || "";
+  var touchMac = navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;   // iPadOS 는 Mac 으로 알린다
+  var ios = /iPhone|iPod|iPad/.test(ua) || touchMac;
+  var android = /Android/i.test(ua);
+  var bar = document.getElementById("sticky-store");
+  if (ios || android) {
+    if (android) {
+      bar.removeAttribute("href");
+      bar.classList.add("soon");
+      bar.querySelector(".sticky-sub").textContent = "Google Play · coming soon";
+      bar.querySelector(".sticky-go").textContent = "SOON";
+    }
+    bar.hidden = false;
+    document.body.classList.add("has-sticky");
+  }
+})();
+</script>
 </body>
 </html>
