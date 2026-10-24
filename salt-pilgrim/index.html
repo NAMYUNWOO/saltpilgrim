@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Salt Pilgrim — a 1-bit roguelike deckbuilder for fans of Balatro and Caves of Qud</title>
-<meta name="description" content="A 1-bit roguelike deckbuilder: Balatro-style poker hands, Slay the Spire turns, and a salt-desert world in the spirit of Caves of Qud (CoQ). Out now on the App Store; Android and Steam coming soon.">
+<meta name="description" content="A 1-bit roguelike deckbuilder: Balatro-style poker hands, Slay the Spire turns, and a salt-desert world in the spirit of Caves of Qud (CoQ). Out now on the App Store and Google Play; Steam coming soon.">
 <link rel="canonical" href="https://namyunwoo.github.io/saltpilgrim/salt-pilgrim/">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoGame", "name": "Salt Pilgrim", "url": "https://namyunwoo.github.io/saltpilgrim/salt-pilgrim/", "description": "A 1-bit world roguelike. A thousand years after the old world's reactors melted and the sea died, you walk Tuzkum, a salt desert where water is money, faith and law. The world remembers what you do, and combat is deckbuilding.", "image": "https://namyunwoo.github.io/saltpilgrim/img/sp/moment05.png", "genre": ["Roguelike", "Deckbuilder", "Card game"], "gamePlatform": ["iOS", "Android", "Steam"], "inLanguage": ["en", "ko", "ja", "zh"], "publisher": {"@type": "Organization", "name": "ArcMagic"}, "author": {"@type": "Organization", "name": "ArcMagic"}, "sameAs": ["https://apps.apple.com/app/id6819187251", "https://www.instagram.com/salt_pilgrim/", "https://www.youtube.com/@salt_pilgrim", "https://www.threads.com/@salt_pilgrim"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoGame", "name": "Salt Pilgrim", "url": "https://namyunwoo.github.io/saltpilgrim/salt-pilgrim/", "description": "A 1-bit world roguelike. A thousand years after the old world's reactors melted and the sea died, you walk Tuzkum, a salt desert where water is money, faith and law. The world remembers what you do, and combat is deckbuilding.", "image": "https://namyunwoo.github.io/saltpilgrim/img/sp/moment05.png", "genre": ["Roguelike", "Deckbuilder", "Card game"], "gamePlatform": ["iOS", "Android", "Steam"], "inLanguage": ["en", "ko", "ja", "zh"], "publisher": {"@type": "Organization", "name": "ArcMagic"}, "author": {"@type": "Organization", "name": "ArcMagic"}, "sameAs": ["https://apps.apple.com/app/id6819187251", "https://play.google.com/store/apps/details?id=com.arcmagic.saltpilgrim", "https://www.instagram.com/salt_pilgrim/", "https://www.youtube.com/@salt_pilgrim", "https://www.threads.com/@salt_pilgrim"]}</script>
 <meta property="og:title" content="Salt Pilgrim">
-<meta property="og:description" content="A 1-bit deckbuilding roguelike. Out now on the App Store; Android and Steam coming soon.">
+<meta property="og:description" content="A 1-bit deckbuilding roguelike. Out now on the App Store and Google Play; Steam coming soon.">
 <meta property="og:image" content="https://namyunwoo.github.io/saltpilgrim/img/sp/moment05.png">
 <meta property="og:url" content="https://namyunwoo.github.io/saltpilgrim/salt-pilgrim/">
 <meta name="theme-color" content="#0A1315">
@@ -28,7 +28,7 @@
 
   <div class="stores" aria-label="Store releases">
     <a class="store live" href="https://apps.apple.com/app/apple-store/id6819187251?pt=119141594&amp;ct=web_sp&amp;mt=8"><b>App Store</b>out now &gt;</a>
-    <div class="store"><b>Google Play</b>coming soon</div>
+    <a class="store live" href="https://play.google.com/store/apps/details?id=com.arcmagic.saltpilgrim"><b>Google Play</b>out now &gt;</a>
     <div class="store"><b>Steam</b>coming soon</div>
   </div>
 
@@ -75,7 +75,7 @@
     <li>Cards you don't play stay in your hand: take a hit now and build a bigger hand for the next turn. Enemies show what they are about to do.</li>
     <li>Earn cards, relics, tonics and mutations on the road. Remove and upgrade cards to shape your deck.</li>
   </ul>
-  <p class="facts">Every frame is drawn in 12×12 one-bit tiles. Out now on the App Store; Android and Steam coming soon. English, Korean, Japanese and Chinese. Cloud save through iCloud.</p>
+  <p class="facts">Every frame is drawn in 12×12 one-bit tiles. Out now on the App Store and Google Play; Steam coming soon. English, Korean, Japanese and Chinese. Cloud save through iCloud.</p>
 
   <h2>FOR FANS OF</h2>
   <p>If you like Caves of Qud (CoQ), the world is built in its spirit: the ruins of a high-tech past, factions with old grudges, and water as both money and rite. If Balatro's poker hands and the turn-by-turn tension of Slay the Spire are your thing, that is the combat.</p>
@@ -138,7 +138,7 @@
 </a>
 <script>
 (function () {
-  // 모바일 기기에 맞는 스토어를 화면 아래에 늘 띄운다(iOS = App Store, Android = Google Play — 아직 출시 전이라 "coming soon")
+  // 모바일 기기에 맞는 스토어를 화면 아래에 늘 띄운다(iOS = App Store, Android = Google Play — 2026-10-24 출시)
   var ua = navigator.userAgent || "";
   var touchMac = navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;   // iPadOS 는 Mac 으로 알린다
   var ipad = /iPad/.test(ua) || touchMac;
@@ -147,10 +147,8 @@
   var bar = document.getElementById("sticky-store");
   if (ios || android) {
     if (android) {
-      bar.removeAttribute("href");
-      bar.classList.add("soon");
-      bar.querySelector(".sticky-sub").textContent = "Google Play · coming soon";
-      bar.querySelector(".sticky-go").textContent = "SOON";
+      bar.href = "https://play.google.com/store/apps/details?id=com.arcmagic.saltpilgrim";
+      bar.querySelector(".sticky-sub").textContent = "Google Play · out now";
     }
     bar.hidden = false;
     document.body.classList.add("has-sticky");

@@ -1,4 +1,5 @@
 // Salt Pilgrim App Store buttons → App Store Connect campaign links (Analytics → Acquisition → Campaigns).
+// Google Play buttons get the same source in the Play install referrer (utm_source · utm_medium · utm_campaign = ct).
 // ct = source_[ad]_[content]_page, e.g. ig_bio_lt (Instagram bio link, link tree) · ig_ad_sp · direct_sp.
 // No cookies, no storage, no third-party requests: it only rewrites link addresses.
 (function () {
@@ -27,6 +28,12 @@
   var store = "https://apps.apple.com/app/apple-store/id" + APP + "?pt=" + PT + "&ct=" + ct + "&mt=8";
   var links = document.querySelectorAll('a[href*="id' + APP + '"]');
   for (var i = 0; i < links.length; i++) links[i].href = store;
+
+  var PLAY = "com.arcmagic.saltpilgrim";
+  var ref = "utm_source=" + src + "&utm_medium=" + (ad ? "paid" : "web") + "&utm_campaign=" + ct;
+  var play = "https://play.google.com/store/apps/details?id=" + PLAY + "&referrer=" + encodeURIComponent(ref);
+  var all = document.querySelectorAll('a[href*="play.google.com/store/apps/details"]');
+  for (var k = 0; k < all.length; k++) if (/[?&]id=com\.arcmagic\.saltpilgrim(&|$)/.test(all[k].getAttribute("href"))) all[k].href = play;
 
   // Link tree → game page: carry the source along so the game page's buttons keep it.
   if (src !== "direct") {
